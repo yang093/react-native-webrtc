@@ -18,14 +18,14 @@ import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Objects;
 
-import org.webrtc.EglBase;
-import org.webrtc.Logging;
-import org.webrtc.MediaStream;
-import org.webrtc.RendererCommon;
-import org.webrtc.RendererCommon.RendererEvents;
-import org.webrtc.RendererCommon.ScalingType;
-import org.webrtc.SurfaceViewRenderer;
-import org.webrtc.VideoTrack;
+import org.custom.webrtc.EglBase;
+import org.custom.webrtc.Logging;
+import org.custom.webrtc.MediaStream;
+import org.custom.webrtc.RendererCommon;
+import org.custom.webrtc.RendererCommon.RendererEvents;
+import org.custom.webrtc.RendererCommon.ScalingType;
+import org.custom.webrtc.SurfaceViewRenderer;
+import org.custom.webrtc.VideoTrack;
 
 public class WebRTCView extends ViewGroup {
     /**

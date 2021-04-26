@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import org.webrtc.*;
+import org.custom.webrtc.*;
 
 /**
  * The implementation of {@code getUserMedia} extracted into a separate file in
