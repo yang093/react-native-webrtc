@@ -16,7 +16,7 @@ import RTCEvent from './RTCEvent';
 import * as RTCUtil from './RTCUtil';
 import EventEmitter from './EventEmitter';
 
-const {WebRTCModule} = NativeModules;
+const {CustomWebRTCModule} = NativeModules;
 
 type RTCSignalingState =
   'stable' |
@@ -98,7 +98,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
   constructor(configuration) {
     super();
     this._peerConnectionId = nextPeerConnectionId++;
-    WebRTCModule.peerConnectionInit(configuration, this._peerConnectionId);
+    CustomWebRTCModule.peerConnectionInit(configuration, this._peerConnectionId);
     this._registerEvents();
   }
 
@@ -107,7 +107,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
       if (index !== -1) {
           return;
       }
-      WebRTCModule.peerConnectionAddStream(stream._reactTag, this._peerConnectionId);
+      CustomWebRTCModule.peerConnectionAddStream(stream._reactTag, this._peerConnectionId);
       this._localStreams.push(stream);
   }
 
@@ -117,12 +117,12 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
           return;
       }
       this._localStreams.splice(index, 1);
-      WebRTCModule.peerConnectionRemoveStream(stream._reactTag, this._peerConnectionId);
+      CustomWebRTCModule.peerConnectionRemoveStream(stream._reactTag, this._peerConnectionId);
   }
 
   createOffer(options) {
     return new Promise((resolve, reject) => {
-      WebRTCModule.peerConnectionCreateOffer(
+      CustomWebRTCModule.peerConnectionCreateOffer(
         this._peerConnectionId,
         RTCUtil.normalizeOfferAnswerOptions(options),
         (successful, data) => {
@@ -137,7 +137,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
 
   createAnswer(options = {}) {
     return new Promise((resolve, reject) => {
-      WebRTCModule.peerConnectionCreateAnswer(
+      CustomWebRTCModule.peerConnectionCreateAnswer(
         this._peerConnectionId,
         RTCUtil.normalizeOfferAnswerOptions(options),
         (successful, data) => {
@@ -151,12 +151,12 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
   }
 
   setConfiguration(configuration) {
-    WebRTCModule.peerConnectionSetConfiguration(configuration, this._peerConnectionId);
+    CustomWebRTCModule.peerConnectionSetConfiguration(configuration, this._peerConnectionId);
   }
 
   setLocalDescription(sessionDescription: RTCSessionDescription) {
     return new Promise((resolve, reject) => {
-      WebRTCModule.peerConnectionSetLocalDescription(
+      CustomWebRTCModule.peerConnectionSetLocalDescription(
         sessionDescription.toJSON ? sessionDescription.toJSON() : sessionDescription,
         this._peerConnectionId,
         (successful, data) => {
@@ -172,7 +172,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
 
   setRemoteDescription(sessionDescription: RTCSessionDescription) {
     return new Promise((resolve, reject) => {
-      WebRTCModule.peerConnectionSetRemoteDescription(
+      CustomWebRTCModule.peerConnectionSetRemoteDescription(
         sessionDescription.toJSON ? sessionDescription.toJSON() : sessionDescription,
         this._peerConnectionId,
         (successful, data) => {
@@ -188,7 +188,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
 
   addIceCandidate(candidate) {
     return new Promise((resolve, reject) => {
-      WebRTCModule.peerConnectionAddICECandidate(
+      CustomWebRTCModule.peerConnectionAddICECandidate(
         candidate.toJSON ? candidate.toJSON() : candidate,
         this._peerConnectionId,
         (successful) => {
@@ -203,7 +203,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
   }
 
   getStats() {
-    return WebRTCModule.peerConnectionGetStats(this._peerConnectionId)
+    return CustomWebRTCModule.peerConnectionGetStats(this._peerConnectionId)
         .then( data =>  {
            /* On both Android and iOS it is faster to construct a single
             JSON string representing the Map of StatsReports and have it
@@ -229,7 +229,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
   }
 
   close() {
-    WebRTCModule.peerConnectionClose(this._peerConnectionId);
+    CustomWebRTCModule.peerConnectionClose(this._peerConnectionId);
   }
 
   _getTrack(streamReactTag, trackId): MediaStreamTrack {
@@ -340,7 +340,7 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
         }
         const evDataChannel = ev.dataChannel;
         const id = evDataChannel.id;
-        // XXX RTP data channels are not defined by the WebRTC standard, have
+        // XXX RTP data channels are not defined by the CustomWebRTC standard, have
         // been deprecated in Chromium, and Google have decided (in 2015) to no
         // longer support them (in the face of multiple reported issues of
         // breakages).
@@ -393,13 +393,13 @@ export default class RTCPeerConnection extends EventTarget(PEER_CONNECTION_EVENT
       // unsigned short by the standard:
       // https://www.w3.org/TR/webrtc/#dom-datachannel-id. Additionally, 65535
       // is reserved due to SCTP INIT and INIT-ACK chunks only allowing a
-      // maximum of 65535 streams to be negotiated (as defined by the WebRTC
+      // maximum of 65535 streams to be negotiated (as defined by the CustomWebRTC
       // Data Channel Establishment Protocol).
       for (id = 1; id < 65535 && dataChannelIds.has(id); ++id);
       // TODO Throw an error if no unused id is available.
       dataChannelDict = Object.assign({id}, dataChannelDict);
     }
-    WebRTCModule.createDataChannel(
+    CustomWebRTCModule.createDataChannel(
         this._peerConnectionId,
         label,
         dataChannelDict);

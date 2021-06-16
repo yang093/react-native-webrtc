@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
-const {WebRTCModule} = NativeModules;
+const {CustomWebRTCModule} = NativeModules;
 
 const RTCView = {
   name: 'RTCVideoView',

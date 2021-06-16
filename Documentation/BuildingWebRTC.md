@@ -1,6 +1,6 @@
-# Building WebRTC
+# Building CustomWebRTC
 
-This document shows how to prepare a WebRTC build for its inclusion in this
+This document shows how to prepare a CustomWebRTC build for its inclusion in this
 plugin.
 
 The build will be made with the `build-webrtc.py` Python script located in the
@@ -9,7 +9,7 @@ The build will be made with the `build-webrtc.py` Python script located in the
 ## Preparing the build
 
 Running the script with `--setup` will download all necessary tools for building
-WebRTC. The script must be run with a target directory where all WebRTC source
+CustomWebRTC. The script must be run with a target directory where all CustomWebRTC source
 code and resulting build artifacts will be placed. A `build_webrtc` directory
 will be created containing it all.
 
@@ -46,7 +46,7 @@ cd
 
 Now the code is ready for building!
 
-Notice that since M79 chromium changed the branch naming scheme, for example M87 is WebRTC branch 4280.
+Notice that since M79 chromium changed the branch naming scheme, for example M87 is CustomWebRTC branch 4280.
 For a full list of branches, see: https://chromiumdash.appspot.com/branches
 
 ## Building
@@ -69,7 +69,7 @@ The build artifacts will be located in `~/src/build_webrtc/build/ios/`.
 
 ### Android
 
-**NOTE**: WebRTC for Android can only be built on Linux at the moment.
+**NOTE**: CustomWebRTC for Android can only be built on Linux at the moment.
 
 If you have switched branches, first run:
 

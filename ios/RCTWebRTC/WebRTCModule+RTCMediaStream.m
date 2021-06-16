@@ -1,5 +1,5 @@
 //
-//  WebRTCModule+RTCMediaStream.m
+//  CustomWebRTCModule+RTCMediaStream.m
 //
 //  Created by one on 2015/9/24.
 //  Copyright © 2015 One. All rights reserved.
@@ -7,18 +7,18 @@
 
 #import <objc/runtime.h>
 
-#import <WebRTC/RTCCameraVideoCapturer.h>
-#import <WebRTC/RTCVideoTrack.h>
-#import <WebRTC/RTCMediaConstraints.h>
+#import <CustomWebRTC/RTCCameraVideoCapturer.h>
+#import <CustomWebRTC/RTCVideoTrack.h>
+#import <CustomWebRTC/RTCMediaConstraints.h>
 
 #import "RTCMediaStreamTrack+React.h"
-#import "WebRTCModule+RTCPeerConnection.h"
+#import "CustomWebRTCModule+RTCPeerConnection.h"
 
 #import "ScreenCapturer.h"
 #import "ScreenCaptureController.h"
 #import "VideoCaptureController.h"
 
-@implementation WebRTCModule (RTCMediaStream)
+@implementation CustomWebRTCModule (RTCMediaStream)
 
 #pragma mark - getUserMedia
 

@@ -1,5 +1,5 @@
 //
-//  WebRTCModule.h
+//  CustomWebRTCModule.h
 //
 //  Created by one on 2015/9/24.
 //  Copyright © 2015 One. All rights reserved.
@@ -12,13 +12,13 @@
 #import <React/RCTConvert.h>
 #import <React/RCTEventEmitter.h>
 
-#import <WebRTC/RTCMediaStream.h>
-#import <WebRTC/RTCPeerConnectionFactory.h>
-#import <WebRTC/RTCPeerConnection.h>
-#import <WebRTC/RTCAudioTrack.h>
-#import <WebRTC/RTCVideoTrack.h>
-#import <WebRTC/RTCVideoDecoderFactory.h>
-#import <WebRTC/RTCVideoEncoderFactory.h>
+#import <CustomWebRTC/RTCMediaStream.h>
+#import <CustomWebRTC/RTCPeerConnectionFactory.h>
+#import <CustomWebRTC/RTCPeerConnection.h>
+#import <CustomWebRTC/RTCAudioTrack.h>
+#import <CustomWebRTC/RTCVideoTrack.h>
+#import <CustomWebRTC/RTCVideoDecoderFactory.h>
+#import <CustomWebRTC/RTCVideoEncoderFactory.h>
 
 static NSString *const kEventPeerConnectionSignalingStateChanged = @"peerConnectionSignalingStateChanged";
 static NSString *const kEventPeerConnectionStateChanged = @"peerConnectionStateChanged";
@@ -33,7 +33,7 @@ static NSString *const kEventDataChannelStateChanged = @"dataChannelStateChanged
 static NSString *const kEventDataChannelReceiveMessage = @"dataChannelReceiveMessage";
 static NSString *const kEventMediaStreamTrackMuteChanged = @"mediaStreamTrackMuteChanged";
 
-@interface WebRTCModule : RCTEventEmitter <RCTBridgeModule>
+@interface CustomWebRTCModule : RCTEventEmitter <RCTBridgeModule>
 
 @property(nonatomic, strong) dispatch_queue_t workerQueue;
 

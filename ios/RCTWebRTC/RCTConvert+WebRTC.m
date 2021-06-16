@@ -1,10 +1,10 @@
-#import "RCTConvert+WebRTC.h"
+#import "RCTConvert+CustomWebRTC.h"
 #import <React/RCTLog.h>
-#import <WebRTC/RTCDataChannelConfiguration.h>
-#import <WebRTC/RTCIceServer.h>
-#import <WebRTC/RTCSessionDescription.h>
+#import <CustomWebRTC/RTCDataChannelConfiguration.h>
+#import <CustomWebRTC/RTCIceServer.h>
+#import <CustomWebRTC/RTCSessionDescription.h>
 
-@implementation RCTConvert (WebRTC)
+@implementation RCTConvert (CustomWebRTC)
 
 + (RTCSessionDescription *)RTCSessionDescription:(id)json
 {

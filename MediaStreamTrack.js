@@ -6,7 +6,7 @@ import MediaStreamErrorEvent from './MediaStreamErrorEvent';
 import type MediaStreamError from './MediaStreamError';
 import { deepClone } from './RTCUtil';
 
-const {WebRTCModule} = NativeModules;
+const {CustomWebRTCModule} = NativeModules;
 
 const MEDIA_STREAM_TRACK_EVENTS = [
   'ended',
@@ -58,13 +58,13 @@ class MediaStreamTrack extends EventTarget(MEDIA_STREAM_TRACK_EVENTS) {
     if (enabled === this._enabled) {
       return;
     }
-    WebRTCModule.mediaStreamTrackSetEnabled(this.id, !this._enabled);
+    CustomWebRTCModule.mediaStreamTrackSetEnabled(this.id, !this._enabled);
     this._enabled = !this._enabled;
     this.muted = !this._enabled;
   }
 
   stop() {
-    WebRTCModule.mediaStreamTrackSetEnabled(this.id, false);
+    CustomWebRTCModule.mediaStreamTrackSetEnabled(this.id, false);
     this.readyState = 'ended';
     // TODO: save some stopped flag?
   }
@@ -83,7 +83,7 @@ class MediaStreamTrack extends EventTarget(MEDIA_STREAM_TRACK_EVENTS) {
     if (this.kind !== 'video') {
       throw new Error('Only implemented for video tracks');
     }
-    WebRTCModule.mediaStreamTrackSwitchCamera(this.id);
+    CustomWebRTCModule.mediaStreamTrackSwitchCamera(this.id);
   }
 
   applyConstraints() {
@@ -107,7 +107,7 @@ class MediaStreamTrack extends EventTarget(MEDIA_STREAM_TRACK_EVENTS) {
   }
 
   release() {
-    WebRTCModule.mediaStreamTrackRelease(this.id);
+    CustomWebRTCModule.mediaStreamTrackRelease(this.id);
   }
 }
 

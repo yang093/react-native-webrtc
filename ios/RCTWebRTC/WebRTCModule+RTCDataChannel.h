@@ -1,5 +1,5 @@
-#import "WebRTCModule.h"
-#import <WebRTC/RTCDataChannel.h>
+#import "CustomWebRTCModule.h"
+#import <CustomWebRTC/RTCDataChannel.h>
 
 @interface RTCDataChannel (React)
 
@@ -8,6 +8,6 @@
 
 @end
 
-@interface WebRTCModule (RTCDataChannel) <RTCDataChannelDelegate>
+@interface CustomWebRTCModule (RTCDataChannel) <RTCDataChannelDelegate>
 
 @end

@@ -7,7 +7,7 @@ import MediaStream from './MediaStream';
 import MediaStreamError from './MediaStreamError';
 import permissions from './Permissions';
 
-const { WebRTCModule } = NativeModules;
+const { CustomWebRTCModule } = NativeModules;
 
 
 export default function getUserMedia(constraints = {}) {
@@ -92,7 +92,7 @@ export default function getUserMedia(constraints = {}) {
           reject(error);
       };
 
-      WebRTCModule.getUserMedia(constraints, success, failure);
+      CustomWebRTCModule.getUserMedia(constraints, success, failure);
     });
   });
 }

@@ -7,7 +7,7 @@ import MessageEvent from './MessageEvent';
 import RTCDataChannelEvent from './RTCDataChannelEvent';
 import EventEmitter from './EventEmitter';
 
-const {WebRTCModule} = NativeModules;
+const {CustomWebRTCModule} = NativeModules;
 
 type RTCDataChannelInit = {
   ordered?: boolean;
@@ -87,7 +87,7 @@ export default class RTCDataChannel extends EventTarget(DATA_CHANNEL_EVENTS) {
 
   send(data: string | ArrayBuffer | ArrayBufferView) {
     if (typeof data === 'string') {
-      WebRTCModule.dataChannelSend(this._peerConnectionId, this.id, data, 'text');
+      CustomWebRTCModule.dataChannelSend(this._peerConnectionId, this.id, data, 'text');
       return;
     }
 
@@ -99,7 +99,7 @@ export default class RTCDataChannel extends EventTarget(DATA_CHANNEL_EVENTS) {
     } else {
       throw new TypeError('Data must be either string, ArrayBuffer, or ArrayBufferView');
     }
-    WebRTCModule.dataChannelSend(this._peerConnectionId, this.id, base64.fromByteArray(data), 'binary');
+    CustomWebRTCModule.dataChannelSend(this._peerConnectionId, this.id, base64.fromByteArray(data), 'binary');
   }
 
   close() {
@@ -107,7 +107,7 @@ export default class RTCDataChannel extends EventTarget(DATA_CHANNEL_EVENTS) {
       return;
     }
     this.readyState = 'closing';
-    WebRTCModule.dataChannelClose(this._peerConnectionId, this.id);
+    CustomWebRTCModule.dataChannelClose(this._peerConnectionId, this.id);
   }
 
   _unregisterEvents() {

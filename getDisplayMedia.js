@@ -5,7 +5,7 @@ import { Platform, NativeModules } from 'react-native';
 import MediaStream from './MediaStream';
 import MediaStreamError from './MediaStreamError';
 
-const { WebRTCModule } = NativeModules;
+const { CustomWebRTCModule } = NativeModules;
 
 export default function getDisplayMedia(constraints) {
     if (!constraints || !constraints.video) {
@@ -13,7 +13,7 @@ export default function getDisplayMedia(constraints) {
     }
 
     return new Promise((resolve, reject) => {
-        WebRTCModule.getDisplayMedia()
+        CustomWebRTCModule.getDisplayMedia()
             .then(data => {
                 const { streamId, track } = data;
 

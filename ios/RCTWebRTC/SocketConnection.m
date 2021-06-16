@@ -1,6 +1,6 @@
 //
 //  SocketConnection.m
-//  RCTWebRTC
+//  RCTCustomWebRTC
 //
 //  Created by Alex-Dan Bumbu on 08/01/2021.
 //

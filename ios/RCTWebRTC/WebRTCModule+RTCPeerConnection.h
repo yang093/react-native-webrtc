@@ -1,13 +1,13 @@
 //
-//  WebRTCModule+RTCPeerConnection.h
+//  CustomWebRTCModule+RTCPeerConnection.h
 //
 //  Created by one on 2015/9/24.
 //  Copyright © 2015 One. All rights reserved.
 //
 
-#import "WebRTCModule.h"
-#import <WebRTC/RTCDataChannel.h>
-#import <WebRTC/RTCPeerConnection.h>
+#import "CustomWebRTCModule.h"
+#import <CustomWebRTC/RTCDataChannel.h>
+#import <CustomWebRTC/RTCPeerConnection.h>
 
 @interface RTCPeerConnection (React)
 
@@ -19,6 +19,6 @@
 
 @end
 
-@interface WebRTCModule (RTCPeerConnection) <RTCPeerConnectionDelegate>
+@interface CustomWebRTCModule (RTCPeerConnection) <RTCPeerConnectionDelegate>
 
 @end

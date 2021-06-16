@@ -1,14 +1,14 @@
 //
 //  ScreenCapturer.m
-//  RCTWebRTC
+//  RCTCustomWebRTC
 //
 //  Created by Alex-Dan Bumbu on 06/01/2021.
 //
 
 #include <mach/mach_time.h>
 
-#import <WebRTC/RTCCVPixelBuffer.h>
-#import <WebRTC/RTCVideoFrameBuffer.h>
+#import <CustomWebRTC/RTCCVPixelBuffer.h>
+#import <CustomWebRTC/RTCVideoFrameBuffer.h>
 #import <ReplayKit/ReplayKit.h>
 
 #import "ScreenCapturer.h"

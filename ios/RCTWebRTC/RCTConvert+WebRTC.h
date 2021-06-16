@@ -1,11 +1,11 @@
 #import <React/RCTConvert.h>
-#import <WebRTC/RTCDataChannelConfiguration.h>
-#import <WebRTC/RTCConfiguration.h>
-#import <WebRTC/RTCIceServer.h>
-#import <WebRTC/RTCSessionDescription.h>
-#import <WebRTC/RTCIceCandidate.h>
+#import <CustomWebRTC/RTCDataChannelConfiguration.h>
+#import <CustomWebRTC/RTCConfiguration.h>
+#import <CustomWebRTC/RTCIceServer.h>
+#import <CustomWebRTC/RTCSessionDescription.h>
+#import <CustomWebRTC/RTCIceCandidate.h>
 
-@interface RCTConvert (WebRTC)
+@interface RCTConvert (CustomWebRTC)
 
 + (RTCIceCandidate *)RTCIceCandidate:(id)json;
 + (RTCSessionDescription *)RTCSessionDescription:(id)json;

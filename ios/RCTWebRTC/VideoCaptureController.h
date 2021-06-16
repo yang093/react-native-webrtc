@@ -1,6 +1,6 @@
 
 #import <Foundation/Foundation.h>
-#import <WebRTC/RTCCameraVideoCapturer.h>
+#import <CustomWebRTC/RTCCameraVideoCapturer.h>
 
 #import "CaptureController.h"
 

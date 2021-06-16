@@ -7,6 +7,6 @@ project.xcworkspace
 .idea
 android/build
 Podfile.lock
-WebRTC.xcframework
-WebRTC.dSYMs
+CustomWebRTC.xcframework
+CustomWebRTC.dSYMs
 

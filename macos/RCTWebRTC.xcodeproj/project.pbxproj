@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0779C0B624D7C79B00E3B7C6 /* WebRTCModule+RTCPeerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2223F1CB493C00015FD5C /* WebRTCModule+RTCPeerConnection.m */; };
-		0779C0B724D7C79B00E3B7C6 /* WebRTCModule+VideoTrackAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B56CFFF212C12EF00213CEE /* WebRTCModule+VideoTrackAdapter.m */; };
-		0779C0B824D7C79B00E3B7C6 /* WebRTCModule+RTCMediaStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2223D1CB493C00015FD5C /* WebRTCModule+RTCMediaStream.m */; };
+		0779C0B624D7C79B00E3B7C6 /* CustomWebRTCModule+RTCPeerConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2223F1CB493C00015FD5C /* CustomWebRTCModule+RTCPeerConnection.m */; };
+		0779C0B724D7C79B00E3B7C6 /* CustomWebRTCModule+VideoTrackAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B56CFFF212C12EF00213CEE /* CustomWebRTCModule+VideoTrackAdapter.m */; };
+		0779C0B824D7C79B00E3B7C6 /* CustomWebRTCModule+RTCMediaStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A2223D1CB493C00015FD5C /* CustomWebRTCModule+RTCMediaStream.m */; };
 		0779C0B924D7C79B00E3B7C6 /* VideoCaptureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDA6DF20C18B6B00B38B45 /* VideoCaptureController.m */; };
 		0779C0BA24D7C79B00E3B7C6 /* RTCMediaStreamTrack+React.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDDA6DC20C17E7C00B38B45 /* RTCMediaStreamTrack+React.m */; };
-		0779C0BB24D7C79B00E3B7C6 /* WebRTCModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A222451CB493C00015FD5C /* WebRTCModule.m */; };
-		0779C0BC24D7C79B00E3B7C6 /* RCTConvert+WebRTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EC07E51CB73DFE00F3D79C /* RCTConvert+WebRTC.m */; };
-		0779C0BD24D7C79B00E3B7C6 /* WebRTCModule+Permissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6C06B217F1D54005DCD37 /* WebRTCModule+Permissions.m */; };
-		0779C0BE24D7C79B00E3B7C6 /* WebRTCModule+RTCDataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08391CB9AEE900F3D79C /* WebRTCModule+RTCDataChannel.m */; };
+		0779C0BB24D7C79B00E3B7C6 /* CustomWebRTCModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A222451CB493C00015FD5C /* CustomWebRTCModule.m */; };
+		0779C0BC24D7C79B00E3B7C6 /* RCTConvert+CustomWebRTC.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EC07E51CB73DFE00F3D79C /* RCTConvert+CustomWebRTC.m */; };
+		0779C0BD24D7C79B00E3B7C6 /* CustomWebRTCModule+Permissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6C06B217F1D54005DCD37 /* CustomWebRTCModule+Permissions.m */; };
+		0779C0BE24D7C79B00E3B7C6 /* CustomWebRTCModule+RTCDataChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EC08391CB9AEE900F3D79C /* CustomWebRTCModule+RTCDataChannel.m */; };
 		0779C0BF24D7C79B00E3B7C6 /* RTCVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A222371CB493C00015FD5C /* RTCVideoViewManager.m */; };
-		DE312C21256D3A75005F60B4 /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE312C20256D3A75005F60B4 /* WebRTC.xcframework */; };
+		DE312C21256D3A75005F60B4 /* CustomWebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE312C20256D3A75005F60B4 /* CustomWebRTC.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,26 +33,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0779C0C524D7C79B00E3B7C6 /* libRCTWebRTC-macos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRCTWebRTC-macos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B56CFFE212C12EF00213CEE /* WebRTCModule+VideoTrackAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebRTCModule+VideoTrackAdapter.h"; sourceTree = "<group>"; };
-		0B56CFFF212C12EF00213CEE /* WebRTCModule+VideoTrackAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+VideoTrackAdapter.m"; sourceTree = "<group>"; };
-		0BC6C06B217F1D54005DCD37 /* WebRTCModule+Permissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+Permissions.m"; sourceTree = "<group>"; };
+		0779C0C524D7C79B00E3B7C6 /* libRCTCustomWebRTC-macos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libRCTCustomWebRTC-macos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B56CFFE212C12EF00213CEE /* CustomWebRTCModule+VideoTrackAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CustomWebRTCModule+VideoTrackAdapter.h"; sourceTree = "<group>"; };
+		0B56CFFF212C12EF00213CEE /* CustomWebRTCModule+VideoTrackAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomWebRTCModule+VideoTrackAdapter.m"; sourceTree = "<group>"; };
+		0BC6C06B217F1D54005DCD37 /* CustomWebRTCModule+Permissions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomWebRTCModule+Permissions.m"; sourceTree = "<group>"; };
 		0BDDA6DC20C17E7C00B38B45 /* RTCMediaStreamTrack+React.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "RTCMediaStreamTrack+React.m"; sourceTree = "<group>"; };
 		0BDDA6DE20C17EA400B38B45 /* RTCMediaStreamTrack+React.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RTCMediaStreamTrack+React.h"; sourceTree = "<group>"; };
 		0BDDA6DF20C18B6B00B38B45 /* VideoCaptureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureController.m; sourceTree = "<group>"; };
 		0BDDA6E120C18B8600B38B45 /* VideoCaptureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoCaptureController.h; sourceTree = "<group>"; };
 		35A222361CB493C00015FD5C /* RTCVideoViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoViewManager.h; sourceTree = "<group>"; };
 		35A222371CB493C00015FD5C /* RTCVideoViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCVideoViewManager.m; sourceTree = "<group>"; };
-		35A2223D1CB493C00015FD5C /* WebRTCModule+RTCMediaStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCMediaStream.m"; sourceTree = "<group>"; };
-		35A2223E1CB493C00015FD5C /* WebRTCModule+RTCPeerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebRTCModule+RTCPeerConnection.h"; sourceTree = "<group>"; };
-		35A2223F1CB493C00015FD5C /* WebRTCModule+RTCPeerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCPeerConnection.m"; sourceTree = "<group>"; };
-		35A222441CB493C00015FD5C /* WebRTCModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRTCModule.h; sourceTree = "<group>"; };
-		35A222451CB493C00015FD5C /* WebRTCModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRTCModule.m; sourceTree = "<group>"; };
-		35EC07E41CB73DBA00F3D79C /* RCTConvert+WebRTC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+WebRTC.h"; sourceTree = "<group>"; };
-		35EC07E51CB73DFE00F3D79C /* RCTConvert+WebRTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+WebRTC.m"; sourceTree = "<group>"; };
-		35EC08381CB9AEC400F3D79C /* WebRTCModule+RTCDataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebRTCModule+RTCDataChannel.h"; sourceTree = "<group>"; };
-		35EC08391CB9AEE900F3D79C /* WebRTCModule+RTCDataChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WebRTCModule+RTCDataChannel.m"; sourceTree = "<group>"; };
-		DE312C20256D3A75005F60B4 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = ../apple/WebRTC.xcframework; sourceTree = "<group>"; };
+		35A2223D1CB493C00015FD5C /* CustomWebRTCModule+RTCMediaStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomWebRTCModule+RTCMediaStream.m"; sourceTree = "<group>"; };
+		35A2223E1CB493C00015FD5C /* CustomWebRTCModule+RTCPeerConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CustomWebRTCModule+RTCPeerConnection.h"; sourceTree = "<group>"; };
+		35A2223F1CB493C00015FD5C /* CustomWebRTCModule+RTCPeerConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomWebRTCModule+RTCPeerConnection.m"; sourceTree = "<group>"; };
+		35A222441CB493C00015FD5C /* CustomWebRTCModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWebRTCModule.h; sourceTree = "<group>"; };
+		35A222451CB493C00015FD5C /* CustomWebRTCModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWebRTCModule.m; sourceTree = "<group>"; };
+		35EC07E41CB73DBA00F3D79C /* RCTConvert+CustomWebRTC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+CustomWebRTC.h"; sourceTree = "<group>"; };
+		35EC07E51CB73DFE00F3D79C /* RCTConvert+CustomWebRTC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+CustomWebRTC.m"; sourceTree = "<group>"; };
+		35EC08381CB9AEC400F3D79C /* CustomWebRTCModule+RTCDataChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomWebRTCModule+RTCDataChannel.h"; sourceTree = "<group>"; };
+		35EC08391CB9AEE900F3D79C /* CustomWebRTCModule+RTCDataChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CustomWebRTCModule+RTCDataChannel.m"; sourceTree = "<group>"; };
+		DE312C20256D3A75005F60B4 /* CustomWebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CustomWebRTC.xcframework; path = ../apple/CustomWebRTC.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE312C21256D3A75005F60B4 /* WebRTC.xcframework in Frameworks */,
+				DE312C21256D3A75005F60B4 /* CustomWebRTC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 		35A222161CB493700015FD5C = {
 			isa = PBXGroup;
 			children = (
-				35A222311CB493C00015FD5C /* RCTWebRTC */,
+				35A222311CB493C00015FD5C /* RCTCustomWebRTC */,
 				35A222201CB493700015FD5C /* Products */,
 				DE312C1F256D3A75005F60B4 /* Frameworks */,
 			);
@@ -79,41 +79,41 @@
 		35A222201CB493700015FD5C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0779C0C524D7C79B00E3B7C6 /* libRCTWebRTC-macos.a */,
+				0779C0C524D7C79B00E3B7C6 /* libRCTCustomWebRTC-macos.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		35A222311CB493C00015FD5C /* RCTWebRTC */ = {
+		35A222311CB493C00015FD5C /* RCTCustomWebRTC */ = {
 			isa = PBXGroup;
 			children = (
-				35EC07E41CB73DBA00F3D79C /* RCTConvert+WebRTC.h */,
-				35EC07E51CB73DFE00F3D79C /* RCTConvert+WebRTC.m */,
+				35EC07E41CB73DBA00F3D79C /* RCTConvert+CustomWebRTC.h */,
+				35EC07E51CB73DFE00F3D79C /* RCTConvert+CustomWebRTC.m */,
 				0BDDA6DE20C17EA400B38B45 /* RTCMediaStreamTrack+React.h */,
 				0BDDA6DC20C17E7C00B38B45 /* RTCMediaStreamTrack+React.m */,
 				35A222361CB493C00015FD5C /* RTCVideoViewManager.h */,
 				35A222371CB493C00015FD5C /* RTCVideoViewManager.m */,
 				0BDDA6E120C18B8600B38B45 /* VideoCaptureController.h */,
 				0BDDA6DF20C18B6B00B38B45 /* VideoCaptureController.m */,
-				0BC6C06B217F1D54005DCD37 /* WebRTCModule+Permissions.m */,
-				35EC08381CB9AEC400F3D79C /* WebRTCModule+RTCDataChannel.h */,
-				35EC08391CB9AEE900F3D79C /* WebRTCModule+RTCDataChannel.m */,
-				35A2223D1CB493C00015FD5C /* WebRTCModule+RTCMediaStream.m */,
-				35A2223E1CB493C00015FD5C /* WebRTCModule+RTCPeerConnection.h */,
-				35A2223F1CB493C00015FD5C /* WebRTCModule+RTCPeerConnection.m */,
-				0B56CFFE212C12EF00213CEE /* WebRTCModule+VideoTrackAdapter.h */,
-				0B56CFFF212C12EF00213CEE /* WebRTCModule+VideoTrackAdapter.m */,
-				35A222441CB493C00015FD5C /* WebRTCModule.h */,
-				35A222451CB493C00015FD5C /* WebRTCModule.m */,
+				0BC6C06B217F1D54005DCD37 /* CustomWebRTCModule+Permissions.m */,
+				35EC08381CB9AEC400F3D79C /* CustomWebRTCModule+RTCDataChannel.h */,
+				35EC08391CB9AEE900F3D79C /* CustomWebRTCModule+RTCDataChannel.m */,
+				35A2223D1CB493C00015FD5C /* CustomWebRTCModule+RTCMediaStream.m */,
+				35A2223E1CB493C00015FD5C /* CustomWebRTCModule+RTCPeerConnection.h */,
+				35A2223F1CB493C00015FD5C /* CustomWebRTCModule+RTCPeerConnection.m */,
+				0B56CFFE212C12EF00213CEE /* CustomWebRTCModule+VideoTrackAdapter.h */,
+				0B56CFFF212C12EF00213CEE /* CustomWebRTCModule+VideoTrackAdapter.m */,
+				35A222441CB493C00015FD5C /* CustomWebRTCModule.h */,
+				35A222451CB493C00015FD5C /* CustomWebRTCModule.m */,
 			);
-			name = RCTWebRTC;
-			path = ../apple/RCTWebRTC;
+			name = RCTCustomWebRTC;
+			path = ../apple/RCTCustomWebRTC;
 			sourceTree = SOURCE_ROOT;
 		};
 		DE312C1F256D3A75005F60B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE312C20256D3A75005F60B4 /* WebRTC.xcframework */,
+				DE312C20256D3A75005F60B4 /* CustomWebRTC.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0779C0B424D7C79B00E3B7C6 /* RCTWebRTC-macos */ = {
+		0779C0B424D7C79B00E3B7C6 /* RCTCustomWebRTC-macos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0779C0C224D7C79B00E3B7C6 /* Build configuration list for PBXNativeTarget "RCTWebRTC-macos" */;
+			buildConfigurationList = 0779C0C224D7C79B00E3B7C6 /* Build configuration list for PBXNativeTarget "RCTCustomWebRTC-macos" */;
 			buildPhases = (
 				0779C0B524D7C79B00E3B7C6 /* Sources */,
 				0779C0C024D7C79B00E3B7C6 /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = "RCTWebRTC-macos";
-			productName = RCTWebRTC;
-			productReference = 0779C0C524D7C79B00E3B7C6 /* libRCTWebRTC-macos.a */;
+			name = "RCTCustomWebRTC-macos";
+			productName = RCTCustomWebRTC;
+			productReference = 0779C0C524D7C79B00E3B7C6 /* libRCTCustomWebRTC-macos.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +146,7 @@
 			attributes = {
 				LastUpgradeCheck = 0720;
 			};
-			buildConfigurationList = 35A2221A1CB493700015FD5C /* Build configuration list for PBXProject "RCTWebRTC" */;
+			buildConfigurationList = 35A2221A1CB493700015FD5C /* Build configuration list for PBXProject "RCTCustomWebRTC" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -159,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0779C0B424D7C79B00E3B7C6 /* RCTWebRTC-macos */,
+				0779C0B424D7C79B00E3B7C6 /* RCTCustomWebRTC-macos */,
 			);
 		};
 /* End PBXProject section */
@@ -169,15 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0779C0B624D7C79B00E3B7C6 /* WebRTCModule+RTCPeerConnection.m in Sources */,
-				0779C0B724D7C79B00E3B7C6 /* WebRTCModule+VideoTrackAdapter.m in Sources */,
-				0779C0B824D7C79B00E3B7C6 /* WebRTCModule+RTCMediaStream.m in Sources */,
+				0779C0B624D7C79B00E3B7C6 /* CustomWebRTCModule+RTCPeerConnection.m in Sources */,
+				0779C0B724D7C79B00E3B7C6 /* CustomWebRTCModule+VideoTrackAdapter.m in Sources */,
+				0779C0B824D7C79B00E3B7C6 /* CustomWebRTCModule+RTCMediaStream.m in Sources */,
 				0779C0B924D7C79B00E3B7C6 /* VideoCaptureController.m in Sources */,
 				0779C0BA24D7C79B00E3B7C6 /* RTCMediaStreamTrack+React.m in Sources */,
-				0779C0BB24D7C79B00E3B7C6 /* WebRTCModule.m in Sources */,
-				0779C0BC24D7C79B00E3B7C6 /* RCTConvert+WebRTC.m in Sources */,
-				0779C0BD24D7C79B00E3B7C6 /* WebRTCModule+Permissions.m in Sources */,
-				0779C0BE24D7C79B00E3B7C6 /* WebRTCModule+RTCDataChannel.m in Sources */,
+				0779C0BB24D7C79B00E3B7C6 /* CustomWebRTCModule.m in Sources */,
+				0779C0BC24D7C79B00E3B7C6 /* RCTConvert+CustomWebRTC.m in Sources */,
+				0779C0BD24D7C79B00E3B7C6 /* CustomWebRTCModule+Permissions.m in Sources */,
+				0779C0BE24D7C79B00E3B7C6 /* CustomWebRTCModule+RTCDataChannel.m in Sources */,
 				0779C0BF24D7C79B00E3B7C6 /* RTCVideoViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +300,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0779C0C224D7C79B00E3B7C6 /* Build configuration list for PBXNativeTarget "RCTWebRTC-macos" */ = {
+		0779C0C224D7C79B00E3B7C6 /* Build configuration list for PBXNativeTarget "RCTCustomWebRTC-macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0779C0C324D7C79B00E3B7C6 /* Debug */,
@@ -309,7 +309,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		35A2221A1CB493700015FD5C /* Build configuration list for PBXProject "RCTWebRTC" */ = {
+		35A2221A1CB493700015FD5C /* Build configuration list for PBXProject "RCTCustomWebRTC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				35A222261CB493700015FD5C /* Debug */,

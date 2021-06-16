@@ -1,6 +1,6 @@
 //
 //  ScreenCaptureController.h
-//  RCTWebRTC
+//  RCTCustomWebRTC
 //
 //  Created by Alex-Dan Bumbu on 06/01/2021.
 //

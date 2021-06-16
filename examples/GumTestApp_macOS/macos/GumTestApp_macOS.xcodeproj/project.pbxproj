@@ -13,7 +13,7 @@
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
-		DEA820F0256D46E5000673C7 /* WebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA820EF256D46E5000673C7 /* WebRTC.xcframework */; };
+		DEA820F0256D46E5000673C7 /* CustomWebRTC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA820EF256D46E5000673C7 /* CustomWebRTC.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		A82DFB63B157C65E5D698CA2 /* Pods-Shared-GumTestApp_macOS-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared-GumTestApp_macOS-iOS.release.xcconfig"; path = "Target Support Files/Pods-Shared-GumTestApp_macOS-iOS/Pods-Shared-GumTestApp_macOS-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C8DBC48FD7C3AEF576C57B21 /* libPods-Shared-GumTestApp_macOS-macOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shared-GumTestApp_macOS-macOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0E74F571E1F48FF00A8324 /* Pods-Shared-GumTestApp_macOS-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shared-GumTestApp_macOS-macOS.release.xcconfig"; path = "Target Support Files/Pods-Shared-GumTestApp_macOS-macOS/Pods-Shared-GumTestApp_macOS-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		DEA820EF256D46E5000673C7 /* WebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = WebRTC.xcframework; path = "../node_modules/react-native-webrtc/apple/WebRTC.xcframework"; sourceTree = "<group>"; };
+		DEA820EF256D46E5000673C7 /* CustomWebRTC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CustomWebRTC.xcframework; path = "../node_modules/react-native-webrtc/apple/CustomWebRTC.xcframework"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FB6EED1BDEABADF047CC5223 /* libPods-Shared-GumTestApp_macOS-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shared-GumTestApp_macOS-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA820F0256D46E5000673C7 /* WebRTC.xcframework in Frameworks */,
+				DEA820F0256D46E5000673C7 /* CustomWebRTC.xcframework in Frameworks */,
 				0496A360A6F874C295C73D4B /* libPods-Shared-GumTestApp_macOS-macOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +66,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DEA820EF256D46E5000673C7 /* WebRTC.xcframework */,
+				DEA820EF256D46E5000673C7 /* CustomWebRTC.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				FB6EED1BDEABADF047CC5223 /* libPods-Shared-GumTestApp_macOS-iOS.a */,
@@ -255,11 +255,11 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shared-GumTestApp_macOS-macOS/Pods-Shared-GumTestApp_macOS-macOS-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/WebRTC/WebRTC.framework/WebRTC",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/CustomWebRTC/CustomWebRTC.framework/CustomWebRTC",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CustomWebRTC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

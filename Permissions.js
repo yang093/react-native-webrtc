@@ -2,7 +2,7 @@
 
 import { NativeModules, PermissionsAndroid, Platform } from 'react-native';
 
-const { WebRTCModule } = NativeModules;
+const { CustomWebRTCModule } = NativeModules;
 
 /**
  * Type declaration for a permissions descriptor.
@@ -87,7 +87,7 @@ class Permissions {
                     () => resolve(this.RESULT.PROMPT));
             });
         } else if (Platform.OS === 'ios' || Platform.OS === 'macos') {
-            return WebRTCModule.checkPermission(permissionDesc.name);
+            return CustomWebRTCModule.checkPermission(permissionDesc.name);
         } else {
             return Promise.reject(new TypeError("Unsupported platform."));
         }
@@ -113,7 +113,7 @@ class Permissions {
                 = this._lastReq.then(requestPermission, requestPermission);
             return this._lastReq;
         } else if (Platform.OS === 'ios' || Platform.OS === 'macos') {
-            return WebRTCModule.requestPermission(permissionDesc.name);
+            return CustomWebRTCModule.requestPermission(permissionDesc.name);
         } else {
             return Promise.reject(new TypeError("Unsupported platform."));
         }

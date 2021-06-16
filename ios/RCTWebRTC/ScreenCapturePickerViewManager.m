@@ -9,7 +9,7 @@
 #import <React/RCTUIManager.h>
 
 #import "ScreenCapturePickerViewManager.h"
-//#import "WebRTCModule.h"
+//#import "CustomWebRTCModule.h"
 
 NSString* const kRTCScreenSharingExtension = @"RTCScreenSharingExtension";
 

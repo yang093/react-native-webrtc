@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/react-native-webrtc.svg)](https://badge.fury.io/js/react-native-webrtc)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-webrtc.svg?maxAge=2592000)](https://img.shields.io/npm/dm/react-native-webrtc.svg?maxAge=2592000)
 
-A WebRTC module for React Native.
+A CustomWebRTC module for React Native.
 - Support iOS / macOS / Android.
 - Support Video / Audio / Data Channels.
 
@@ -11,9 +11,9 @@ A WebRTC module for React Native.
 
 ## Community
 
-Everyone is welcome to our [Discourse community](https://react-native-webrtc.discourse.group/) to discuss any React Native and WebRTC related topics.
+Everyone is welcome to our [Discourse community](https://react-native-webrtc.discourse.group/) to discuss any React Native and CustomWebRTC related topics.
 
-## WebRTC Revision
+## CustomWebRTC Revision
 
 * Currently used revision: [M87](https://github.com/jitsi/webrtc/commit/9a88667ef7b46c175851506453c6cc6b642292cc)
 * Supported architectures
@@ -27,8 +27,8 @@ Everyone is welcome to our [Discourse community](https://react-native-webrtc.dis
 - [Android](https://github.com/react-native-webrtc/react-native-webrtc/blob/master/Documentation/AndroidInstallation.md)
 
 ## Usage
-Now, you can use WebRTC like in browser.
-In your `index.ios.js`/`index.android.js`, you can require WebRTC to import RTCPeerConnection, RTCSessionDescription, etc.
+Now, you can use CustomWebRTC like in browser.
+In your `index.ios.js`/`index.android.js`, you can require CustomWebRTC to import RTCPeerConnection, RTCSessionDescription, etc.
 
 ```javascript
 import {
@@ -43,7 +43,7 @@ import {
 } from 'react-native-webrtc';
 ```
 Anything about using RTCPeerConnection, RTCSessionDescription and RTCIceCandidate is like browser.
-Support most WebRTC APIs, please see the [Document](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection).
+Support most CustomWebRTC APIs, please see the [Document](https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection).
 
 ```javascript
 const configuration = {"iceServers": [{"url": "stun:stun.l.google.com:19302"}]};
@@ -123,7 +123,7 @@ By calling this method the JavaScript global namespace gets "polluted" with the 
 * `window.MediaStream`
 * `window.MediaStreamTrack`
 
-This is useful to make existing WebRTC JavaScript libraries (that expect those globals to exist) work with react-native-webrtc.
+This is useful to make existing CustomWebRTC JavaScript libraries (that expect those globals to exist) work with react-native-webrtc.
 
 
 #### MediaStreamTrack.prototype._switchCamera()

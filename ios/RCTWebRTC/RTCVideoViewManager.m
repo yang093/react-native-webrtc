@@ -10,18 +10,18 @@
 
 #import <React/RCTLog.h>
 #if !TARGET_OS_OSX
-#import <WebRTC/RTCEAGLVideoView.h>
+#import <CustomWebRTC/RTCEAGLVideoView.h>
 #endif
-#import <WebRTC/RTCMediaStream.h>
+#import <CustomWebRTC/RTCMediaStream.h>
 #if !TARGET_OS_OSX
-#import <WebRTC/RTCMTLVideoView.h>
+#import <CustomWebRTC/RTCMTLVideoView.h>
 #else
-#import <WebRTC/RTCMTLNSVideoView.h>
+#import <CustomWebRTC/RTCMTLNSVideoView.h>
 #endif
-#import <WebRTC/RTCVideoTrack.h>
+#import <CustomWebRTC/RTCVideoTrack.h>
 
 #import "RTCVideoViewManager.h"
-#import "WebRTCModule.h"
+#import "CustomWebRTCModule.h"
 
 /**
  * In the fashion of
@@ -89,9 +89,9 @@ typedef NS_ENUM(NSInteger, RTCVideoViewObjectFit) {
 @property (nonatomic, strong) RTCVideoTrack *videoTrack;
 
 /**
- * Reference to the main WebRTC RN module.
+ * Reference to the main CustomWebRTC RN module.
  */
-@property (nonatomic, weak) WebRTCModule *module;
+@property (nonatomic, weak) CustomWebRTCModule *module;
 
 @end
 
@@ -364,7 +364,7 @@ RCT_EXPORT_MODULE()
 - (NSView *)view {
 #endif
   RTCVideoView *v = [[RTCVideoView alloc] init];
-  v.module = [self.bridge moduleForName:@"WebRTCModule"];
+  v.module = [self.bridge moduleForName:@"CustomWebRTCModule"];
 #if !TARGET_OS_OSX
   v.clipsToBounds = YES;
 #endif
@@ -400,7 +400,7 @@ RCT_CUSTOM_VIEW_PROPERTY(streamURL, NSString *, RTCVideoView) {
     }
 
     NSString *streamReactTag = (NSString *)json;
-    WebRTCModule *module = view.module;
+    CustomWebRTCModule *module = view.module;
 
     dispatch_async(module.workerQueue, ^{
         RTCMediaStream *stream = [module streamForReactTag:streamReactTag];

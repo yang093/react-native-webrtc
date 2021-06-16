@@ -1,5 +1,5 @@
 //
-//  WebRTCModule+RTCPeerConnection.m
+//  CustomWebRTCModule+RTCPeerConnection.m
 //
 //  Created by one on 2015/9/24.
 //  Copyright © 2015 One. All rights reserved.
@@ -12,18 +12,18 @@
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 
-#import <WebRTC/RTCConfiguration.h>
-#import <WebRTC/RTCIceCandidate.h>
-#import <WebRTC/RTCIceServer.h>
-#import <WebRTC/RTCMediaConstraints.h>
-#import <WebRTC/RTCIceCandidate.h>
-#import <WebRTC/RTCSessionDescription.h>
-#import <WebRTC/RTCStatisticsReport.h>
+#import <CustomWebRTC/RTCConfiguration.h>
+#import <CustomWebRTC/RTCIceCandidate.h>
+#import <CustomWebRTC/RTCIceServer.h>
+#import <CustomWebRTC/RTCMediaConstraints.h>
+#import <CustomWebRTC/RTCIceCandidate.h>
+#import <CustomWebRTC/RTCSessionDescription.h>
+#import <CustomWebRTC/RTCStatisticsReport.h>
 
-#import "WebRTCModule.h"
-#import "WebRTCModule+RTCDataChannel.h"
-#import "WebRTCModule+RTCPeerConnection.h"
-#import "WebRTCModule+VideoTrackAdapter.h"
+#import "CustomWebRTCModule.h"
+#import "CustomWebRTCModule+RTCDataChannel.h"
+#import "CustomWebRTCModule+RTCPeerConnection.h"
+#import "CustomWebRTCModule+VideoTrackAdapter.h"
 
 @implementation RTCPeerConnection (React)
 
@@ -72,14 +72,14 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setWebRTCModule:(id)webRTCModule
+- (void)setCustomWebRTCModule:(id)webRTCModule
 {
     objc_setAssociatedObject(self, @selector(webRTCModule), webRTCModule, OBJC_ASSOCIATION_ASSIGN);
 }
 
 @end
 
-@implementation WebRTCModule (RTCPeerConnection)
+@implementation CustomWebRTCModule (RTCPeerConnection)
 
 RCT_EXPORT_METHOD(peerConnectionInit:(RTCConfiguration*)configuration
                             objectID:(nonnull NSNumber *)objectID)
@@ -464,7 +464,7 @@ RCT_EXPORT_METHOD(peerConnectionGetStats:(nonnull NSNumber *) objectID
 }
 
 - (void)peerConnection:(RTCPeerConnection *)peerConnection didRemoveStream:(RTCMediaStream *)stream {
-  // XXX Find the stream by comparing the 'streamId' values. It turns out that WebRTC (as of M69) creates new wrapper
+  // XXX Find the stream by comparing the 'streamId' values. It turns out that CustomWebRTC (as of M69) creates new wrapper
   // instance for the native media stream before invoking the 'didRemoveStream' callback. This means it's a different
   // RTCMediaStream instance passed to 'didAddStream' and 'didRemoveStream'.
   NSString *streamReactTag = nil;
@@ -533,7 +533,7 @@ RCT_EXPORT_METHOD(peerConnectionGetStats:(nonnull NSNumber *) objectID
 }
 
 - (void)peerConnection:(RTCPeerConnection*)peerConnection didOpenDataChannel:(RTCDataChannel*)dataChannel {
-  // XXX RTP data channels are not defined by the WebRTC standard, have been
+  // XXX RTP data channels are not defined by the CustomWebRTC standard, have been
   // deprecated in Chromium, and Google have decided (in 2015) to no longer
   // support them (in the face of multiple reported issues of breakages).
   if (-1 == dataChannel.channelId) {
@@ -543,7 +543,7 @@ RCT_EXPORT_METHOD(peerConnectionGetStats:(nonnull NSNumber *) objectID
   NSNumber *dataChannelId = [NSNumber numberWithInteger:dataChannel.channelId];
   dataChannel.peerConnectionId = peerConnection.reactTag;
   peerConnection.dataChannels[dataChannelId] = dataChannel;
-  // WebRTCModule implements the category RTCDataChannel i.e. the protocol
+  // CustomWebRTCModule implements the category RTCDataChannel i.e. the protocol
   // RTCDataChannelDelegate.
   dataChannel.delegate = self;
 

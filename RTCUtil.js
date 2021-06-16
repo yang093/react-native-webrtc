@@ -141,7 +141,7 @@ export function normalizeOfferAnswerOptions(options = {}) {
         options = options.mandatory;
     }
 
-    // Convert standard options into WebRTC internal constant names.
+    // Convert standard options into CustomWebRTC internal constant names.
     // See: https://github.com/jitsi/webrtc/blob/0cd6ce4de669bed94ba47b88cb71b9be0341bb81/sdk/media_constraints.cc#L113
     for (const [ key, value ] of Object.entries(options)) {
         const newKey = STANDARD_OA_OPTIONS[key.toLowerCase()];

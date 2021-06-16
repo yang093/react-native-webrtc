@@ -3,9 +3,9 @@
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
 
-#import "WebRTCModule+RTCDataChannel.h"
-#import "WebRTCModule+RTCPeerConnection.h"
-#import <WebRTC/RTCDataChannelConfiguration.h>
+#import "CustomWebRTCModule+RTCDataChannel.h"
+#import "CustomWebRTCModule+RTCPeerConnection.h"
+#import <CustomWebRTC/RTCDataChannelConfiguration.h>
 
 @implementation RTCDataChannel (React)
 
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation WebRTCModule (RTCDataChannel)
+@implementation CustomWebRTCModule (RTCDataChannel)
 
 RCT_EXPORT_METHOD(createDataChannel:(nonnull NSNumber *)peerConnectionId
                               label:(NSString *)label

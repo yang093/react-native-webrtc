@@ -118,12 +118,12 @@ def setup(target_dir, platform):
     env = os.environ.copy()
     env['PATH'] = '%s:%s' % (env['PATH'], depot_tools_dir)
 
-    # Maybe fetch WebRTC
+    # Maybe fetch CustomWebRTC
     webrtc_dir = os.path.join(target_dir, 'webrtc', platform)
     if not os.path.isdir(webrtc_dir):
         mkdirp(webrtc_dir)
         os.chdir(webrtc_dir)
-        print('Fetching WebRTC for %s...' % platform)
+        print('Fetching CustomWebRTC for %s...' % platform)
         sh('fetch --nohooks webrtc_%s' % platform, env)
 
     # Run gclient
@@ -142,7 +142,7 @@ def sync(target_dir, platform):
     webrtc_dir = os.path.join(target_dir, 'webrtc', platform, 'src')
 
     if not os.path.isdir(webrtc_dir):
-        print('WebRTC source not found, did you forget to run --setup?')
+        print('CustomWebRTC source not found, did you forget to run --setup?')
         sys.exit(1)
 
     # Prepare environment
@@ -168,7 +168,7 @@ def build(target_dir, platform, debug):
     webrtc_dir = os.path.join(target_dir, 'webrtc', platform, 'src')
 
     if not os.path.isdir(webrtc_dir):
-        print('WebRTC source not found, did you forget to run --setup?')
+        print('CustomWebRTC source not found, did you forget to run --setup?')
         sys.exit(1)
 
     # Prepare environment
@@ -229,36 +229,36 @@ def build(target_dir, platform, debug):
     # Copy build artifacts to build directory
     if platform == 'ios':
         # XCFramework
-        xcodebuild_cmd = 'xcodebuild -create-xcframework -output %s' % os.path.join(build_dir, 'WebRTC.xcframework')
+        xcodebuild_cmd = 'xcodebuild -create-xcframework -output %s' % os.path.join(build_dir, 'CustomWebRTC.xcframework')
         for arch in MACOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-macos-%s' % (build_type, arch)
-            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'WebRTC.framework')
+            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'CustomWebRTC.framework')
         for arch in IOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-ios-%s' % (build_type, arch)
-            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'WebRTC.framework')
+            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'CustomWebRTC.framework')
         sh(xcodebuild_cmd)
 
         # XCFramework (stripped)
-        xcodebuild_cmd = 'xcodebuild -create-xcframework -output %s' % os.path.join(build_dir, 'stripped', 'WebRTC.xcframework')
+        xcodebuild_cmd = 'xcodebuild -create-xcframework -output %s' % os.path.join(build_dir, 'stripped', 'CustomWebRTC.xcframework')
         bitcode_strip_cmd = 'xcrun bitcode_strip -r %s -o %s'
         for arch in MACOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-macos-%s' % (build_type, arch)
-            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'WebRTC.framework')
+            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'CustomWebRTC.framework')
         for arch in IOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-ios-%s' % (build_type, arch)
-            framework_path = os.path.join(gn_out_dir, 'WebRTC.framework', 'WebRTC')
+            framework_path = os.path.join(gn_out_dir, 'CustomWebRTC.framework', 'CustomWebRTC')
             sh(bitcode_strip_cmd % (framework_path, framework_path))
-            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'WebRTC.framework')
+            xcodebuild_cmd += ' -framework %s' % os.path.join(gn_out_dir, 'CustomWebRTC.framework')
         sh(xcodebuild_cmd)
 
         # dSYMs
-        dsyms_dir = os.path.join(build_dir, 'WebRTC.dSYMs')
+        dsyms_dir = os.path.join(build_dir, 'CustomWebRTC.dSYMs')
         for arch in MACOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-macos-%s' % (build_type, arch)
-            shutil.copytree(os.path.join(gn_out_dir, 'WebRTC.dSYM'), os.path.join(dsyms_dir, 'WebRTC.framework.%s.dSYM' % MACOS_ARCH_MAP[arch]))
+            shutil.copytree(os.path.join(gn_out_dir, 'CustomWebRTC.dSYM'), os.path.join(dsyms_dir, 'CustomWebRTC.framework.%s.dSYM' % MACOS_ARCH_MAP[arch]))
         for arch in IOS_BUILD_ARCHS:
             gn_out_dir = 'out/%s-ios-%s' % (build_type, arch)
-            shutil.copytree(os.path.join(gn_out_dir, 'WebRTC.dSYM'), os.path.join(dsyms_dir, 'WebRTC.framework.%s.dSYM' % IOS_ARCH_MAP[arch]))
+            shutil.copytree(os.path.join(gn_out_dir, 'CustomWebRTC.dSYM'), os.path.join(dsyms_dir, 'CustomWebRTC.framework.%s.dSYM' % IOS_ARCH_MAP[arch]))
     else:
         gn_out_dir = 'out/%s-%s' % (build_type, ANDROID_BUILD_CPUS[0])
         shutil.copy(os.path.join(gn_out_dir, 'lib.java/sdk/android/libwebrtc.jar'), build_dir)
@@ -278,8 +278,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('dir', help='Target directory')
     parser.add_argument('--setup', help='Prepare the target directory for building', action='store_true')
-    parser.add_argument('--build', help='Build WebRTC in the target directory', action='store_true')
-    parser.add_argument('--sync', help='Runs gclient sync on the WebRTC directory', action='store_true')
+    parser.add_argument('--build', help='Build CustomWebRTC in the target directory', action='store_true')
+    parser.add_argument('--sync', help='Runs gclient sync on the CustomWebRTC directory', action='store_true')
     parser.add_argument('--ios', help='Use iOS as the target platform', action='store_true')
     parser.add_argument('--android', help='Use Android as the target platform', action='store_true')
     parser.add_argument('--debug', help='Make a Debug build (defaults to false)', action='store_true')
@@ -311,16 +311,16 @@ if __name__ == "__main__":
 
     if args.setup:
         setup(target_dir, platform)
-        print('WebRTC setup for %s completed in %s' % (platform, target_dir))
+        print('CustomWebRTC setup for %s completed in %s' % (platform, target_dir))
         sys.exit(0)
 
     if args.sync:
         sync(target_dir, platform)
-        print('WebRTC sync for %s completed in %s' % (platform, target_dir))
+        print('CustomWebRTC sync for %s completed in %s' % (platform, target_dir))
         sys.exit(0)
 
     if args.build:
         build(target_dir, platform, args.debug)
-        print('WebRTC build for %s completed in %s' % (platform, target_dir))
+        print('CustomWebRTC build for %s completed in %s' % (platform, target_dir))
         sys.exit(0)
 

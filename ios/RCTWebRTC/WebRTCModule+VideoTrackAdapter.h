@@ -1,6 +1,6 @@
 
-#import "WebRTCModule.h"
-#import <WebRTC/RTCPeerConnection.h>
+#import "CustomWebRTCModule.h"
+#import <CustomWebRTC/RTCPeerConnection.h>
 
 @interface RTCPeerConnection (VideoTrackAdapter)
 

@@ -6,7 +6,7 @@ import EventTarget from 'event-target-shim';
 import getDisplayMedia from './getDisplayMedia';
 import getUserMedia from './getUserMedia';
 
-const {WebRTCModule} = NativeModules;
+const {CustomWebRTCModule} = NativeModules;
 
 const MEDIA_DEVICES_EVENTS = [
     'devicechange'
@@ -21,7 +21,7 @@ class MediaDevices extends EventTarget(MEDIA_DEVICES_EVENTS) {
      * implementation.
      */
     enumerateDevices() {
-        return new Promise(resolve => WebRTCModule.enumerateDevices(resolve));
+        return new Promise(resolve => CustomWebRTCModule.enumerateDevices(resolve));
     }
 
     /**

@@ -6,7 +6,7 @@
     "url": "git+https://github.com/react-native-webrtc/react-native-webrtc.git"
   },
   "nativePackage": true,
-  "description": "WebRTC for React Native",
+  "description": "CustomWebRTC for React Native",
   "license": "MIT",
   "homepage": "https://github.com/react-native-webrtc/react-native-webrtc",
   "keywords": [
@@ -31,7 +31,7 @@
   },
   "cross-os": {
     "darwin-extract": {
-      "darwin": "tar -zxf apple/WebRTC.xcframework.tgz -C apple"
+      "darwin": "tar -zxf apple/CustomWebRTC.xcframework.tgz -C apple"
     }
   },
   "bugs": {

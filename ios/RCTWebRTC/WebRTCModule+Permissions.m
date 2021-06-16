@@ -1,13 +1,13 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "WebRTCModule.h"
+#import "CustomWebRTCModule.h"
 
 static NSString *const PERMISSION_DENIED  = @"denied";
 static NSString *const PERMISSION_GRANTED = @"granted";
 static NSString *const PERMISSION_PROMPT  = @"prompt";
 
-@implementation WebRTCModule (Permissions)
+@implementation CustomWebRTCModule (Permissions)
 
 - (AVMediaType)avMediaType:(NSString* )mediaType {
     if ([mediaType isEqualToString:@"microphone"]) {

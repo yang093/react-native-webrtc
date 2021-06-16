@@ -8,12 +8,12 @@
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTLog.h>
 
-#import <WebRTC/RTCVideoRenderer.h>
-#import <WebRTC/RTCVideoTrack.h>
+#import <CustomWebRTC/RTCVideoRenderer.h>
+#import <CustomWebRTC/RTCVideoTrack.h>
 
-#import "WebRTCModule.h"
-#import "WebRTCModule+RTCPeerConnection.h"
-#import "WebRTCModule+VideoTrackAdapter.h"
+#import "CustomWebRTCModule.h"
+#import "CustomWebRTCModule+RTCPeerConnection.h"
+#import "CustomWebRTCModule+VideoTrackAdapter.h"
 
 /* Mute detection timer intervals. The initial timeout will be longer to
  * accommodate for source startup.
@@ -31,7 +31,7 @@ static const NSTimeInterval MUTE_DELAY = 1.5;
 @property (copy, nonatomic) NSNumber *peerConnectionId;
 @property (copy, nonatomic) NSString *streamReactTag;
 @property (copy, nonatomic) NSString *trackId;
-@property (weak, nonatomic) WebRTCModule *module;
+@property (weak, nonatomic) CustomWebRTCModule *module;
 
 @end
 
@@ -45,7 +45,7 @@ static const NSTimeInterval MUTE_DELAY = 1.5;
 - (instancetype)initWith:(NSNumber*)peerConnectionId
           streamReactTag:(NSString*)streamReactTag
                  trackId:(NSString*)trackId
-            webRTCModule:(WebRTCModule*)module {
+            webRTCModule:(CustomWebRTCModule*)module {
     self = [super init];
     if (self) {
         self.peerConnectionId = peerConnectionId;

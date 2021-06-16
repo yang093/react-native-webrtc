@@ -1,5 +1,5 @@
 //
-//  WebRTCModule.m
+//  CustomWebRTCModule.m
 //
 //  Created by one on 2015/9/24.
 //  Copyright © 2015 One. All rights reserved.
@@ -13,16 +13,16 @@
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTUtils.h>
 
-#import <WebRTC/RTCDefaultVideoDecoderFactory.h>
-#import <WebRTC/RTCDefaultVideoEncoderFactory.h>
+#import <CustomWebRTC/RTCDefaultVideoDecoderFactory.h>
+#import <CustomWebRTC/RTCDefaultVideoEncoderFactory.h>
 
-#import "WebRTCModule.h"
-#import "WebRTCModule+RTCPeerConnection.h"
+#import "CustomWebRTCModule.h"
+#import "CustomWebRTCModule+RTCPeerConnection.h"
 
-@interface WebRTCModule ()
+@interface CustomWebRTCModule ()
 @end
 
-@implementation WebRTCModule
+@implementation CustomWebRTCModule
 
 + (BOOL)requiresMainQueueSetup
 {
@@ -73,7 +73,7 @@
     dispatch_queue_attr_t attributes =
     dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL,
                                             QOS_CLASS_USER_INITIATED, -1);
-    _workerQueue = dispatch_queue_create("WebRTCModule.queue", attributes);
+    _workerQueue = dispatch_queue_create("CustomWebRTCModule.queue", attributes);
   }
   return self;
 }
